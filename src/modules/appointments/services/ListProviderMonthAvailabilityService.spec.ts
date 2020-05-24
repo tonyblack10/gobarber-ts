@@ -1,11 +1,10 @@
-// import FakeUsersRepository from '@modules/users/repositories/fakes/FakeUsersRepository';
 import ListProviderMonthAvailabilityService from './ListProviderMonthAvailabilityService';
 import FakeAppointmentsRepository from '../repositories/fakes/FakeAppointmentsRepository';
 
 let listProviderMonthAvailability: ListProviderMonthAvailabilityService;
 let fakeAppointmentsRepository: FakeAppointmentsRepository;
 
-describe('ListProviders', () => {
+describe('ListProviderMonthAvailability', () => {
   beforeEach(() => {
     fakeAppointmentsRepository = new FakeAppointmentsRepository();
     listProviderMonthAvailability = new ListProviderMonthAvailabilityService(
