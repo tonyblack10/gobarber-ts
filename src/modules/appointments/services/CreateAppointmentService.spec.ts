@@ -17,6 +17,7 @@ describe('CreateAppointment', () => {
     const appointment = await createAppointment.execute({
       date: new Date(),
       provider_id: '83f5cb7b-67df-4157-94a9-ac2237aa7368',
+      user_id: 'b6024528-21e9-4b7a-b6d4-ac78b522cf99',
     });
 
     expect(appointment).toHaveProperty('id');
@@ -31,12 +32,14 @@ describe('CreateAppointment', () => {
     await createAppointment.execute({
       date: appointmentDate,
       provider_id: '83f5cb7b-67df-4157-94a9-ac2237aa7368',
+      user_id: 'b6024528-21e9-4b7a-b6d4-ac78b522cf99',
     });
 
     await expect(
       createAppointment.execute({
         date: appointmentDate,
         provider_id: '83f5cb7b-67df-4157-94a9-ac2237aa7368',
+        user_id: 'b6024528-21e9-4b7a-b6d4-ac78b522cf99',
       }),
     ).rejects.toBeInstanceOf(AppError);
   });
